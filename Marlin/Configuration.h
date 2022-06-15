@@ -74,8 +74,8 @@
 
 // uncomment or comment LKx_PRO definition to change model
 // NOTE: should only define one single model in the meantime
-// #define LK4_PRO
-#define LK5_PRO
+ #define LK4_PRO
+//#define LK5_PRO
 
 // validate model definition for LKxPro printer
 #if defined(LK1_PRO) && !defined(LK4_PRO) && !defined(LK5_PRO)
@@ -173,7 +173,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 
 // Enable the Bluetooth serial interface on AT90USB devices
 //#define BLUETOOTH
@@ -864,7 +864,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 98 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 96.00 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1089,7 +1089,7 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET  { -52, -16, 0 } // dualblower mount. singlefan offsets: { -36, -10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET  { -34, -6, -1.65 } // dualblower mount. singlefan offsets: { -36, -10, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
