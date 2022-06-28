@@ -74,8 +74,8 @@
 
 // uncomment or comment LKx_PRO definition to change model
 // NOTE: should only define one single model in the meantime
- #define LK4_PRO
-//#define LK5_PRO
+// #define LK4_PRO
+#define LK5_PRO
 
 // validate model definition for LKxPro printer
 #if defined(LK1_PRO) && !defined(LK4_PRO) && !defined(LK5_PRO)
@@ -179,10 +179,12 @@
 //#define BLUETOOTH
 
 // Choose the name from boards.h that matches your setup
+#define MOTHERBOARD BOARD_LONGER_LGT_KIT_V1
+
 #ifndef MOTHERBOARD
   #if ANY(U20, U30, U20_PLUS, CUBE2, LK1, LK1_PLUS, LK2, LK4)
     #define MOTHERBOARD BOARD_LONGER3D_LK          // motherboard for LKx(except for LK5), CUBE2
-    
+
   #elif ANY(LK1_PRO, LK4_PRO, LK5_PRO, LK5)
     #define MOTHERBOARD BOARD_LONGER_LGT_KIT_V1       // motherboard for LKxPro and LK5
   #endif
@@ -577,9 +579,9 @@
   // Alfawise U30/U20
   // Please refine the PID settings for your own machine to avoid the E1 hotend error. These a basic settings allowing first startups.
   // Use the command M303 E0 S200 C8 each time you make any changes to your extruder
-  
+
   #if ANY(LK5, LK5_PRO)
-    // have dual blower. send "M303 E0 S200 C8" command to get PID. 
+    // have dual blower. send "M303 E0 S200 C8" command to get PID.
     #define DEFAULT_Kp 28.44
     #define DEFAULT_Ki 2.41
     #define DEFAULT_Kd 83.88
@@ -651,7 +653,7 @@
     // TODO: need update
     #define DEFAULT_bedKp 338.46
     #define DEFAULT_bedKi 63.96
-    #define DEFAULT_bedKd 447.78  
+    #define DEFAULT_bedKd 447.78
   // 220x220 size bed
   #elif ANY(U30, LK2, LK4, LK4_PRO)
     //From M303 command for Alfawise U30 :
@@ -1089,7 +1091,8 @@
  *
  * Specify a Probe position as { X, Y, Z }
  */
-#define NOZZLE_TO_PROBE_OFFSET  { -34, -6, -1.65 } // dualblower mount. singlefan offsets: { -36, -10, 0 }
+//#define NOZZLE_TO_PROBE_OFFSET  { -34, -6, -1.65 } // dualblower mount. singlefan offsets: { -36, -10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { -36, -4, -0.4 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1138,7 +1141,7 @@
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
 
 // For M851 give a range for adjusting the Z probe offset
-#define Z_PROBE_OFFSET_RANGE_MIN -20
+#define Z_PROBE_OFFSET_RANGE_MIN -50
 #define Z_PROBE_OFFSET_RANGE_MAX 20
 
 // Enable the M48 repeatability test to test probe accuracy
@@ -1528,7 +1531,8 @@
 #endif
 
 // Homing speeds (mm/m)
-#define HOMING_FEEDRATE_XY (40*60)
+//#define HOMING_FEEDRATE_XY (40*60)
+#define HOMING_FEEDRATE_XY (50*60)
 #define HOMING_FEEDRATE_Z  (4*60)
 
 // Validate that endstops are triggered on homing moves
@@ -2293,15 +2297,15 @@
     #define XPT2046_Y_CALIBRATION   9000
     #define XPT2046_X_OFFSET        320
     #define XPT2046_Y_OFFSET        0
-  #endif   
+  #endif
 
   #if ENABLED(TS_V20)
     // 2020 feixinda clone std SID240x320-8PCB-D
     #define XPT2046_X_CALIBRATION  -11760
     #define XPT2046_Y_CALIBRATION   8680
     #define XPT2046_X_OFFSET        334
-    #define XPT2046_Y_OFFSET        -14  
-  #endif 
+    #define XPT2046_Y_OFFSET        -14
+  #endif
 #endif
 
 //
