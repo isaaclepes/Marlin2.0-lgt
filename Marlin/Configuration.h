@@ -1092,7 +1092,7 @@
  * Specify a Probe position as { X, Y, Z }
  */
 //#define NOZZLE_TO_PROBE_OFFSET  { -34, -6, -1.65 } // dualblower mount. singlefan offsets: { -36, -10, 0 }
-#define NOZZLE_TO_PROBE_OFFSET { -36, -4, -0.4 }
+#define NOZZLE_TO_PROBE_OFFSET { -40, -9, -1.5 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
